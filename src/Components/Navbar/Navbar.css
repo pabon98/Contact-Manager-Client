@@ -1,0 +1,8 @@
+.navigation{
+    margin-left: 20px;
+    
+}
+.nav-item:hover{
+    background-color:dimgrey;
+    color: red;
+}

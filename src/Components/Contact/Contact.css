@@ -1,0 +1,9 @@
+.card{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLesyLktTa7Pv4KvvSNjqeYFZF7PSLD1PVKeSYajNhgG34LdWtl6RU3C2nWWtD-B45u80&usqp=CAU');
+    transition-duration: 900ms;
+}
+.card:hover{
+    transform: scale(1.3);
+    /* transform:rotate(360deg) */
+  
+}
