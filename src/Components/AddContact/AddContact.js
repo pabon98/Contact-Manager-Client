@@ -1,14 +1,17 @@
 import React, { useRef } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const AddContact = () => {
+    const{user} = useAuth()
     const nameRef = useRef()
     const numberRef = useRef()
 
     const handleAddContact = (e)=>{
         const name = nameRef.current.value
         const number = parseInt(numberRef.current.value)
+        const RegisteredUser = user.email
 
-        const newContact ={name,number}
+        const newContact ={name,number,RegisteredUser}
         fetch('http://localhost:5000/contacts',{
             method: 'POST',
             headers:{

@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const UpdateContact = () => {
+
     const[contact, setContact] = useState({})
     const{id}= useParams()
     useEffect( ()=>{
-        const url =`http://localhost:5000/contacts/${id}`
-        fetch(url)
+        fetch(`http://localhost:5000/contacts/${id}`)
         .then(res=>res.json())
         .then(data=>setContact(data));
     },[id])
-
+//    const Contact =  contact.filter(singleContact=> singleContact._id == id)
+//    console.log(Contact);
     //Update Contact
     const handleNameChange = (e)=>{
         const updatedName = e.target.value
@@ -47,9 +48,10 @@ const UpdateContact = () => {
         <div>
         <h2>Update {contact.name}: {contact.number}</h2>
         <br />
-        {/* <p><small>{id}</small></p> */}
+        <p><small>{id}</small></p>
         <form onSubmit={handleUpdateUser}>
-            <input type="text" onChange={handleNameChange} value={contact.name || ''} name="" id="" />
+            <input type="text" onChange={handleNameChange} value={contact.name 
+                || ''} name="" id="" />
             <input type="number" onChange={handleNumberChange} value={contact.number || ''} name="" id="" />
             <button className='btn btn-success'>Update</button>
         </form>

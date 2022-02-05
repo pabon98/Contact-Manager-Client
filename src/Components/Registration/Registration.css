@@ -1,0 +1,18 @@
+.Form2{
+    width:100%;
+    height: 800px;
+    background-image: url('https://miro.medium.com/max/3840/1*p-nov4HDeK38r3fjfmv0MA.jpeg');
+   background-size: contain;
+}
+.Form2 h1{
+color: white;
+padding-top: 10px;
+text-emphasis-color: white;
+}
+.hookform2{
+position: relative;
+top:50px
+}
+.hookform2 p{
+    color: white;
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import useAuth from '../../hooks/useAuth'
+import useAuth from '../../hooks/useAuth';
 import './Navbar.css'
 
 const Navbar = () => {
-    // const{user} = useAuth()
+    const{user, logOut} = useAuth()
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -24,11 +24,32 @@ const Navbar = () => {
         <li class="nav-item">
           <Link style={{textDecoration:'none',marginRight:'10px',color:'ButtonFace'}} to='/contacts/add'>AddContacts</Link>
         </li>
+        <li class="nav-item">
+         {
+           user.email?
+           <li></li>:
+           <Link style={{textDecoration:'none',marginRight:'10px',color:'ButtonFace'}} to='/registration'>SignUp</Link>
+         }
+        </li>
       </ul>
+    {
+      user.email?
       <span class="navbar-text mx-5">
-        Signin as
-      </span>
+        Sign in as: &nbsp;
+       {user?.displayName}
+    </span>:
+      <span class="navbar-text mx-5">
+    </span>
+    }
     </div>
+   {
+     user.email?
+     <button onClick={logOut} className='btn btn-danger'> LogOut</button>
+     :
+   <Link to='/login'>
+       <button className='btn btn-success'> Login</button>
+   </Link>
+   }
   </div>
 </nav>
         </div>
