@@ -79,7 +79,7 @@ const useFirebase = () => {
     }
 
     const saveUser = (user) => {
-        fetch('http://localhost:5000/contacts', {
+        fetch('https://powerful-scrubland-90023.herokuapp.com/contacts', {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json',

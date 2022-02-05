@@ -7,7 +7,7 @@ const Contacts = () => {
   const{user} = useAuth()
     const [contacts, setContacts] = useState([])
     useEffect( ()=>{
-        fetch(`http://localhost:5000/contacts/${user.email}`)
+        fetch(`https://powerful-scrubland-90023.herokuapp.com/contacts/${user.email}`)
         .then(res=> res.json()
         .then(data=> setContacts(data)))
     },[])
@@ -15,7 +15,7 @@ const Contacts = () => {
     const handleDeleteContact =(id)=>{
         const proceed = window.confirm('Are you sure you want to Delete?')
         if(proceed){
-         const url =`http://localhost:5000/contacts/${id}`
+         const url =`https://powerful-scrubland-90023.herokuapp.com/contacts/${id}`
          fetch(url, {
              method:'DELETE'
          })

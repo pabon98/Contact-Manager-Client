@@ -6,7 +6,7 @@ const UpdateContact = () => {
     const[contact, setContact] = useState({})
     const{id}= useParams()
     useEffect( ()=>{
-        fetch(`http://localhost:5000/contacts/${id}`)
+        fetch(`https://powerful-scrubland-90023.herokuapp.com/contacts/${id}`)
         .then(res=>res.json())
         .then(data=>setContact(data));
     },[id])
@@ -26,7 +26,7 @@ const UpdateContact = () => {
          setContact(updatedUserNumber)
      }
      const handleUpdateUser = (e)=>{
-        const url =`http://localhost:5000/contacts/${id}`
+        const url =`https://powerful-scrubland-90023.herokuapp.com/contacts/${id}`
         fetch(url,{
             method: 'PUT',
             headers:{

@@ -7,7 +7,7 @@ const Home = () => {
     const{user} = useAuth()
     const [contacts, setContacts] = useState([])
     useEffect( ()=>{
-        fetch(`http://localhost:5000/contacts/${user.email}`)
+        fetch(`https://powerful-scrubland-90023.herokuapp.com/contacts/${user.email}`)
         .then(res=>res.json())
         .then(data=> setContacts(data))
     })
@@ -21,7 +21,7 @@ const Home = () => {
             <h1>Our Contacts</h1>
                 }
                 {
-                    contacts.length== 0 &&
+                    contacts.length == 0 &&
                     <p className='fs-4'>Welcome To Contact Manager Application.
                     <br /> Here you can add your favourite contacts.you can update your contact <br /> number also you can delete them</p>
                 }

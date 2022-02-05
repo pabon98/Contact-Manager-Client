@@ -12,7 +12,7 @@ const AddContact = () => {
         const RegisteredUser = user.email
 
         const newContact ={name,number,RegisteredUser}
-        fetch('http://localhost:5000/contacts',{
+        fetch('https://powerful-scrubland-90023.herokuapp.com/contacts',{
             method: 'POST',
             headers:{
                 'content-type': 'application/json'
