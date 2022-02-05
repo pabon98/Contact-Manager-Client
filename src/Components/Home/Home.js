@@ -16,7 +16,7 @@ const Home = () => {
         
                 {
                 contacts.length == 0 ?
-            <p className='text-danger fs-3'>No User Found</p>
+            <p className='text-danger fs-3'>'No contacts added yet. Create one!'</p>
             :
             <h1>Our Contacts</h1>
                 }
